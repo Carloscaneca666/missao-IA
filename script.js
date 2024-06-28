@@ -17,10 +17,19 @@ const perguntas =[
         alternativas:["Alternativa 1", "Alternativa 2"],
     },
 ];
+
 let atual = 0;
 let perguntaAtual;
+
 function mostraPerguntas(){
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    mostraPerguntas();
+}
+function mostraPerguntas(){
+    for (const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElementNS("button");
+        botaoAlternativas.textContent = alternativa;
+    }
 }
 mostraPerguntas();
