@@ -26,10 +26,11 @@ function mostraPerguntas(){
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostraPerguntas();
 }
-function mostraPerguntas(){
+function mostraAlternativas(){
     for (const alternativa of perguntaAtual.alternativas){
         const botaoAlternativas = document.createElementNS("button");
         botaoAlternativas.textContent = alternativa;
+        caixaAlternativas.appendChild(botaoAlternativas);
     }
 }
 mostraPerguntas();
